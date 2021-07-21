@@ -1,0 +1,8 @@
+body {
+  background-color: rgb(12,51,84);
+  color: white;
+}
+
+a:visited {
+  color: lightgray;
+}
