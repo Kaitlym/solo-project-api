@@ -16,9 +16,11 @@ function Upload(){
 
 	const changeHandler = async (event) => {
 		var file = event.target.files[0];
+    console.log(event.target.files)
     var reader = new FileReader();
     reader.onload = function(event) {
-      setSelectedFile(event.target.result);
+      console.log(file)
+      setSelectedFile(file.result);
     };
 	};
   const formSubmission = async () => {
@@ -27,7 +29,7 @@ function Upload(){
   }
 	const handleFormSubmission = async (resume) => {
     const body = JSON.stringify(resume)
-    console.log(body)
+    //console.log(body)
     const header = { 'content-type': 'application/json'}
     const response = await fetch(resumeUrl, {method: "POST", body, headers: { 'content-type': 'application/json'}});
     router.push("/upload");
