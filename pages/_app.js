@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 const { nextRedux } = require('../redux/store');
-import '../styles.css'
+import './style.css';
+
 
 // Simple functional App component which can be wrapped
 function WrappedApp({ Component, pageProps }) {

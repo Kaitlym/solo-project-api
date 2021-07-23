@@ -18,7 +18,7 @@ Head.propTypes = {
 };
 
 Head.defaultProps = {
-  title: 'bootcamp-shopping-cart',
+  title: 'PresenceConvert',
   description: 'A basic gasket app'
 };
 

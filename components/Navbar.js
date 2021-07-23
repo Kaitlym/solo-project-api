@@ -9,7 +9,7 @@ function NavBar(page){
         <div>
             <Container>
                 <Head title={`${page.name}`}/>
-                <Typography variant="h3">PresenceConvert</Typography>
+                <Typography variant="h4">PresenceConvert</Typography>
                 {page.name == "Home" ? (
                     <Button href="/" variant="contained" color="primary">Home</Button>
                 ) : (

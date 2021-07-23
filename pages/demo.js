@@ -1,17 +1,26 @@
 import React from 'react';
 
-import Head from '../components/head';
 import NavBar from '../components/Navbar';
-import Template1 from '../components/Template1';
+import Website from '../components/Website';
+import Personality from '../components/Personality';
 
-import Link from 'next/link';
 
 import { Container, Typography, Button,  } from '@material-ui/core';
 
 export const Demo = () => (
+  <>
+  <NavBar name="Demo"/>
+  <div className="left">
   <Container>
-    <NavBar name="Demo"/>
+    <Website/>
   </Container>
+  </div>
+  <div className="right">
+    <Container>
+      <Personality/>
+    </Container>
+  </div>
+  </>
 );
 
 export default Demo;

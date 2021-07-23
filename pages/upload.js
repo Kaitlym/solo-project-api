@@ -18,7 +18,7 @@ function Upload(){
     console.log("body" + body)
     const header = { 'content-type': 'application/json'}
     const response = await fetch(resumeUrl, {method: "POST", body, headers: { 'content-type': 'application/json'}});
-    router.push("/upload");
+    router.push("/");
   }
   let fileReader;
   const  handleFileReader = async (e) => {
@@ -36,16 +36,15 @@ function Upload(){
   return(
     <Container>
       <NavBar name="Upload"/>
-
-      <input type="file" name="file" onChange={e=> handleFileChosen(e.target.files[0])} />
-      <button onClick={handleFormSubmission}>Submit</button>
-      <h2>Preview:</h2>
-      <Container>
-      {selectedFile == null ? (
+        <input type="file" name="file" onChange={e=> handleFileChosen(e.target.files[0])} />
+        <button onClick={handleFormSubmission}>Submit</button>
+        <h2>Preview:</h2>
+        <Container>
+          {selectedFile == null ? (
             <p>Select a file!</p>
-        ) : (
-          <p>{selectedFile}</p>
-        )}
+          ) : (
+            <p>{selectedFile}</p>
+          )}
       </Container>
     </Container>
   )
