@@ -9,13 +9,27 @@ function NavBar(page){
         <div>
             <Container>
                 <Head title={`${page.name}`}/>
-            
-                <Button href="/">Home</Button>
-                <Button href="/upload">Upload</Button>
-                <Button href="/demo">Demo</Button>
+                <Typography variant="h3">PresenceConvert</Typography>
+                {page.name == "Home" ? (
+                    <Button href="/" variant="contained" color="primary">Home</Button>
+                ) : (
+                    <Button href="/">Home</Button>
+                )}
+                
+                {page.name == "Upload" ? (
+                    <Button href="/upload" variant="contained" color="primary">Upload</Button>
+                ) : (
+                    <Button href="/upload">Upload</Button>
+                )}
+
+                {page.name == "Demo" ? (
+                    <Button href="/demo" variant="contained" color="primary">Demo</Button>
+                ) : (
+                    <Button href="/demo">Demo</Button>
+                )}
             </Container>
             <hr></hr>
-            <Typography variant="h3">{page.name}</Typography>
+            
         </div>
         </>
     );

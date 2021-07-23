@@ -9,24 +9,10 @@ import Head from '../components/Head';
 import { Container, Typography, Button,  } from '@material-ui/core';
 
 function Upload(){
-  const resumeUrl = "http://localhost:8000/v1/resumes/"
-  const router = useRouter()
+  const resumeUrl = "http://localhost:8000/v1/resumes/";
+  const router = useRouter();
 	const [selectedFile, setSelectedFile] = useState();
-  
 
-	// const changeHandler = async (event) => {
-	// 	var file = event.target.files[0];
-  //   console.log(event.target.files)
-  //   var reader = new FileReader();
-  //   reader.onload = function(event) {
-  //     console.log(file)
-  //     setSelectedFile(file.result);
-  //   };
-	// };
-  // const formSubmission = async () => {
-  //   console.log(selectedFile)
-  //   handleFormSubmission({id:0, text:selectedFile})
-  // }
 	const handleFormSubmission = async () => {
     const body = JSON.stringify({text:selectedFile})
     console.log("body" + body)
@@ -53,6 +39,14 @@ function Upload(){
 
       <input type="file" name="file" onChange={e=> handleFileChosen(e.target.files[0])} />
       <button onClick={handleFormSubmission}>Submit</button>
+      <h2>Preview:</h2>
+      <Container>
+      {selectedFile == null ? (
+            <p>Select a file!</p>
+        ) : (
+          <p>{selectedFile}</p>
+        )}
+      </Container>
     </Container>
   )
 }
